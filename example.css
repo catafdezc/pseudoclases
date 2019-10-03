@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background: rosybrown    
+}
+
+
+
+/*Pseudoclases* la prioridad de lo que se haga depende de la posición en al que es declarada en el archivo css
+
+div:hover {
+    background: red;
+}
+
+div:first-child { 
+    Todos los div que sean el primer hijo de la clase o lo que sea, se le harán los cambios
+    background: blue;
+}
+
+div:last-child {
+    similar al anterior pero para el último hijo 
+}
+
+div:first-of-type {
+    el primer div, en este caso, que está. También  last-of-type 
+}
+
+div:nth-child(2n) {
+aplica cierto estilo dependiendo de la posición-ecuación que le demos
+background: blueviolet
+}
+
+pseudoclases para manejar links
+
+#link:visited {
+    color: brown;
+}
+
+a:link {
+    color: black;
+    links cuando no han sido visitados
+}
+
+#link:active {
+    color: yellow;
+    estilos que se le aplicarán cuando se le esgté haciendo click al link
+}
+
+#link:hover {
+    color: greenyellow;
+    estilo que se le aplicará cuando el puntero esté sobre el link
+}
+
+Pseudoclases para imput
+
+input[type="text"]:focus {
+    cuando el ususario esté enfocado en esto el input tendrá algún estilo
+     aplicar a varios selectores se pone una coma. 
+input[type="text"]:focus, input[type="password"]:focus {}
+    background: red;
+}
+
+button:active {
+    background: black;
+}
+
+input[type="checkbox"]+div {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+
+input[type="checkbox"]:checked + div {
+    background: green;
+}
+
+input[type="checkbox"]:checked {
+    background: blue;
+} 
+
+pseudoclases especales - before y after - , permite agregar contenido antes y después a una etiqueta. 
+Siempre muestran contenido que se pone en el archivo css, y no aparece en el archivo html, que solo sirve
+para poner información, no para hacer patrones 
+
+*/
+/*
+
+div::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: black;
+
+
+}
+
+div::before {}
+
+crear un boton con bolita que cambia de color. El círculo se puede hacer haciando bordes en la mitad del 
+largo del cuadrado que se hace*/
+
+.checkbox {
+    width: 200px;
+    height: 100px;
+    background: grey;
+    border-radius: 50px;
+}
+
+.checkbox::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50px;
+    transition: .5s all linear /*es la vleocidad en la que transicione, y hay que decirle cuando hará la transición q
+    hará cambiar el elemento. Después hay que decirle como es el movimiento, linear,  ease-out empieza muy rápdo
+    y termina muy lento, ease-in, al revés, ease-in-out, */
+    
+    /* transform: translateX(100px)
+    transform con translate hace que se mueva el elemento en especifico
+    position: relative;
+    left: 100px;*/
+}
+
+input[type="checkbox"] {
+
+    position: absolute;
+    width: 200px;   
+    height: 100px;
+    opacity: 0;
+    z-index: 99;
+}
+
+input[type="checkbox"]:checked + .checkbox::before { /*checked permite cambiar estilo cuando está checkeado*/
+
+    transform: translateX(100px)
+}
+
+.giro {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    /*transition: .5s all ease-out*/
+    animation: 1s animacion linear forwards; /*con el último la animación no se pierde*/
+}
+
+/*.giro:hover {
+    transform: rotateZ(45deg) } /*está el eje X, Y y Z, la Z es a que "sale"*/
+
+/*Definir una Animación. Necesita reglas: keyframes, se indica como se hará la animación. La animación se hace
+al principio, cuando se carga la página. */
+
+@keyframes animacion {
+    0% /*from. Se puee poner como % o desde inicio y final. Pero siempre debe tener 1 y 100%*/ {
+        background: white;
+    }
+
+    100% /*to*/ {
+        background: black;
+    }
+}
+
+.mono {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    animation: 2s mono linear forwards;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes mono {
+    0% {
+        background: white;
+        transform: translateX(100px) rotateZ(45deg);
+        /*transform: rotateZ(45deg);*/
+    }
+
+    60% {
+        background: yellow;
+        transform: translateX(200px) rotateZ(90deg);
+        /*transform: rotateZ(90deg);*/
+
+    }
+
+    100% {
+        background: green;
+        transform: translateX(300px) rotateZ(200deg);
+        /*transform: rotateZ(200deg)*/
+    }
+}
