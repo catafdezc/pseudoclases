@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.grande {
+    width: 400px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid black;
+
+}
+
+.foto > img {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 25px;
+        left: 8px;
+}
+
+.texto {
+    position: relative;
+    top: 10px;
+    left: 75px;
+}
+
