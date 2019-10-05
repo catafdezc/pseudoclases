@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.contenido > h1 {
+    /*padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 10px;*/
+    /*padding: 100px 200px; el primero es para el de arriba y el de abajo, y el segundo es para los laterales.*/
+    /*padding: 100px 20px 50px 10px son en orden de las manecillas del reloj.*/
+    padding: 30px 0 20px 50px;
+    font-weight: lighter; 
+}
+
+main{
+    padding: 0px 50px;
+}
+
+main > aside {
+    width: 30%;
+    float: left;
+}
+
+aside > h2 {
+    color:#45AFFF;
+    font-weight: lighter;
+    font-size: 25px;
+    margin: 30px 0;
+}
+
+aside > p {
+    margin-bottom: 30px;
+}
+
+aside > button {
+    border: none;   
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    background: #45AFFF;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+main > .programas {
+    width: 67%;
+    float: left; /*sirve para separar la rayita. Se puede hacer un margen o que flote a right*/
+    margin-left: 3%;
+}
+
+.programas > .imagen {
+    width: 50%;
+    float: left;
+    padding: 50px;
+    
+}
+
+.programas > .imagen:hover {
+    transform: translateY(-10px) /*así no cambia ni mueve el resto*/ scale(1.05, 1.05); /*escala por sobre la misma imagen*/
+
+}
+
+.programas > .imagen > img {
+    width: 100%; /*el tamaño depende de los tamaños anteriores*/
+}
+
+.programas > .imagen > h3 {
+    text-align: center;
+    font-weight: lighter;
+    color: #333;
+    }
