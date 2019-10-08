@@ -56,12 +56,15 @@ main > .programas {
     width: 50%;
     float: left;
     padding: 50px;
+<<<<<<< HEAD
     
 }
 
 .programas > .imagen:hover {
     transform: translateY(-10px) /*así no cambia ni mueve el resto*/ scale(1.05, 1.05); /*escala por sobre la misma imagen*/
 
+=======
+>>>>>>> master
 }
 
 .programas > .imagen > img {
@@ -72,4 +75,8 @@ main > .programas {
     text-align: center;
     font-weight: lighter;
     color: #333;
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> master

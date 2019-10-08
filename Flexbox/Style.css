@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    height: 500px;
+    background: grey;
+    display: flex;
+    flex-direction: column; /*row es por defecto y es en fila. column da columna. Es auna caracteris. que se le da al padre*/
+    justify-content: center;/*flex-start, center o end es por defecto. muestra el orden que estarán los elementos*/
+    align-items: center;
+}
+
+
+
+main > .box {
+    width: 100px;
+    height: 100px;
+    background: black;
+    /*margin: auto; auto hace que quede al centro de todo, si tieen un width del 100% */
+    }
